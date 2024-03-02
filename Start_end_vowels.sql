@@ -24,3 +24,10 @@ SELECT DISTINCT
 CITY 
 FROM STATION 
 WHERE CITY NOT REGEXP '^[AEIOUaeiou]' OR CITY NOT REGEXP '[AEIOUaeiou]$';
+
+
+SELECT DISTINCT 
+  CITY 
+FROM STATION 
+  WHERE NOT RIGHT(CITY, 1) IN('a','e','i','o','u','A','I','O','E','U') 
+AND NOT LEFT (CITY, 1) IN('a','e','i','o','u','A','I','O','E','U');

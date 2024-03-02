@@ -19,3 +19,8 @@ AND city NOT LIKE 'U%'
 --(city,'a$|e$|i$|o$|u$', 'i')
 ORDER BY 1 ASC
 ;
+
+SELECT DISTINCT 
+CITY 
+FROM STATION 
+WHERE CITY NOT REGEXP '^[AEIOUaeiou]' OR CITY NOT REGEXP '[AEIOUaeiou]$';
